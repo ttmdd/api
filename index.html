@@ -12,7 +12,23 @@
         <h1>Jokes Galore</h1>
         <div id="line"></div>
         <div id="joke"></div>
-        <button type="button" id="btn">Next Joke</button>
+        <form id="rating">
+            <h3>How do you like this joke?</h3>
+            <p>Rate it from 1 (not so funny) to 3 (hilarious)</p>
+            <div id="btns">
+                <!-- <button type="button" id="btn1" class="btnRating">1</button>
+                <button type="button" id="btn2" class="btnRating">2</button>
+                <button type="button" id="btn3" class="btnRating">3</button> -->
+
+                <input type="radio" id="btn1" name="rating" value="1">
+                <label for ="btn1">1</label>
+                <input type="radio" id="btn2" name="rating" value="2">
+                <label for ="btn2">2</label>
+                <input type="radio" id="btn3" name="rating" value="3">
+                <label for ="btn3">3</label>
+            </div>
+        </form>
+        <button type="button" id="btnJoke" class="btn">Next Joke</button>
     </div>
     <script src="index.js" type="module"></script>
 </body>

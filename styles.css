@@ -17,7 +17,35 @@
     font-size: 20px;
 }
 
-#btn {
+#rating {
+    margin-bottom: 50px;
+    display: none;
+}
+
+#rating p {
+    margin-bottom: 50px;
+}
+
+#btns {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin: 0 auto;
+    font-size: 30px;
+}
+
+/* #btns .btnRating {
+    padding: 5px 10px;
+    font-size: 50px;
+} */
+
+#btnJoke {
     padding: 10px;
     font-size: 18px;
+}
+
+#btns .active {
+    border: 3px solid blue;
+    font-size: 50px;
+    /* padding: 5px 10px; */
 }
