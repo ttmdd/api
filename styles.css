@@ -1,51 +1,107 @@
+body {
+    background: url(https://images.unsplash.com/photo-1582298538104-fe2e74c27f59?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80);
+    background-color: gray;
+    height: 600px;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 200px 0;
+}
+
 #app {
     width: 70%;
-    margin: 50px auto;
     text-align: center;
+    background-color: gray;
+    opacity: 0.9;
+    border-radius: 20px;
+    padding: 50px 30px;
+    margin: 300px 0;
 }
-
+    
+#weather {
+    color: rgb(255, 255, 255, 0.8);
+    font-size: 25px;
+    color: rgb(255, 255, 255, 0.8);
+    padding-top: 8px;
+}
+    
+#joke-box {
+    width: 70%;
+    margin: 50px auto 0;
+}
+    
+h1 {
+    color: rgb(228, 162, 38);
+    margin-top: 70px;
+ }
+    
 #line {
     width: 50%;
-    height: 1.5px;
-    background-color: black;
+    height: 1px;
+    background-color: white;
     margin: 0 auto;
-}
-
+ }
+    
 #joke {
     margin: 50px auto;
     width: 50%;
     font-size: 20px;
-}
-
-#rating {
+ }
+   
+ #rating {
     margin-bottom: 50px;
     display: none;
 }
-
-#rating p {
+   
+ #rating p {
     margin-bottom: 50px;
-}
-
+ }
+    
 #btns {
     display: flex;
-    justify-content: space-between;
-    width: 40%;
-    margin: 0 auto;
+    justify-content: space-evenly;
     font-size: 30px;
-}
+ }
 
-/* #btns .btnRating {
-    padding: 5px 10px;
-    font-size: 50px;
-} */
-
-#btnJoke {
+ #btns #btn1 {
+    margin-right: 1px;
+ }
+   
+ #btnJoke {
     padding: 10px;
     font-size: 18px;
+    background-color:rgb(228, 162, 38);
+    border: none;
+    border-radius: 10px;
+    color: rgb(255, 255, 255, 0.8) ;
+    color: rgb(255, 255, 255, 0.8);
 }
 
-#btns .active {
-    border: 3px solid blue;
-    font-size: 50px;
-    /* padding: 5px 10px; */
+/* medium size devices */
+
+@media only screen and (min-width: 768px) {
+    
+    body {
+        background-size: cover;
+        margin: 100px 0;
+    }
+
+    #app {
+        display: flex;
+    }
+
+    #weather-box {
+         width: 20%;
+    }
+
+    #joke-box {
+        width: 80%;
+        margin: 0;
+    }
+            
+    h1 {
+        color: rgb(228, 162, 38);
+        margin-top: 0;
+    }    
 }

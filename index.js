@@ -1,4 +1,12 @@
+import WEATHER_API_KEY from "./apikey.js";
+
 const url = "https://icanhazdadjoke.com/"
+const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=Barcelona&units=metric&appid=${WEATHER_API_KEY}`
+
+window.addEventListener("load", getWeather);
+
+const weather = document.getElementById("weather");
+const weatherIcon = document.getElementById("weather-icon");
 
 const jokeButton = document.getElementById("btnJoke");
 jokeButton.addEventListener("click", getJoke);
@@ -15,6 +23,28 @@ const btn3 = document.getElementById("btn3");
 
 var reportJokes = [];
 var jokeObj = {}
+
+async function getWeather() {
+    let options = {
+    method: "GET"
+    }
+    
+    try {
+    let response = await fetch(weatherUrl, options);
+    
+    if (response.ok) {
+        let json = await response.json();
+        // console.log(json)
+        weather.innerHTML = `${Math.round(json.main.temp)} ºC`
+        weatherIcon.src = `http://openweathermap.org/img/w/${json.weather[0].icon}.png`;
+    } else {
+        console.log("Server error")
+    }
+    } catch (err) {
+        console.log("Network error");
+    }
+    };
+    
 
 async function getJoke() {
 
