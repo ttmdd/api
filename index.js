@@ -21,8 +21,8 @@ const btn1 = document.getElementById("btn1");
 const btn2 = document.getElementById("btn2");
 const btn3 = document.getElementById("btn3");
 
-var reportJokes = [];
-var jokeObj = {}
+let reportJokes = [];
+let jokeObj = {}
 
 async function getWeather() {
     let options = {
@@ -48,7 +48,7 @@ async function getWeather() {
 
 async function getJoke() {
 
-    var options = {
+    let options = {
         method: "GET",
         headers: {
             "Accept": "application/json"
@@ -56,10 +56,10 @@ async function getJoke() {
     }
 
     try {
-        var response = await fetch(url, options);
+        let response = await fetch(url, options);
 
         if (response.ok) {
-            var json = await response.json();
+            let json = await response.json();
 
             showJoke.innerHTML = json.joke;
             rating.style.display = "block";
@@ -91,7 +91,7 @@ async function getJoke() {
 
 function getRating(jokeId) {
 
-    for (var i = 0; i < radioButtons.length; i++) {
+    for (let i = 0; i < radioButtons.length; i++) {
         radioButtons[i].addEventListener('change', (e) => {
             if (btn1.checked) {
                 jokeObj[jokeId].score = 1;
