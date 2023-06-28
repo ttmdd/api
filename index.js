@@ -68,14 +68,11 @@ async function getJoke() {
 
             jokeObj[json.id] = {
                 joke: json.joke,
-                date: date.toISOString(),
-                score: 0 
+                date: date.toISOString()
+                // score: 0 
             }
 
             getRating(json.id);
-            reportJokes.push({...jokeObj[json.id]});
-            // console.log("report jokes array", reportJokes);
-
         } else {
             console.log("Server error")
         }
@@ -91,17 +88,8 @@ async function getJoke() {
 
 function getRating(jokeId) {
 
-    for (let i = 0; i < radioButtons.length; i++) {
-        radioButtons[i].addEventListener('change', (e) => {
-            if (btn1.checked) {
-                jokeObj[jokeId].score = 1;
-            } else if (btn2.checked) {
-                jokeObj[jokeId].score = 2;
-            } else if (btn3.checked) {
-                jokeObj[jokeId].score = 3;
-            } 
-            // console.log("joke after rating", jokeObj);
-        })
-    }
-
+    const v = document.querySelector('input[name="rating"]:checked').value;
+    const newJoke = { ...jokeObj, score: v }
+    reportJokes.push(newJoke)
+    console.log(reportJokes)
 }
